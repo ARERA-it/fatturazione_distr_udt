@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- INIZIO TIPI SEMPLICI -->
+	<xs:simpleType name="CodiceFlussoType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="FTR"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceTipoFatturaType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="R"/>
+			<xs:enumeration value="U"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumeroSequenzaType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="3"/>
+			<xs:pattern value="[0-9]{1,9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PIVAType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{11}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContrattoDispacciamentoType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DataType">
+		<xs:restriction base="xs:string">
+			<xs:length value="10"/>
+			<xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumeroFatturaType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PeriodoCompetenzaType">
+		<xs:restriction base="xs:string">
+			<xs:length value="7"/>
+			<xs:pattern value="\d{2}[/]\d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceVoceFatturataType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="CMOR"/>
+			<xs:enumeration value="BOEL"/>
+			<xs:enumeration value="CCTS"/>
+			<xs:enumeration value="AGAR"/>
+			<xs:enumeration value="INTE"/>
+			<xs:enumeration value="SUPO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RagioneSocialeType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IndirizzoType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CAPType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LocalitaType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ProvinciaType">
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NazioneType">
+		<xs:restriction base="xs:string">
+			<xs:length value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IBANType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ValutaType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[+-]?[0-9]{1,9},[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CorrispettivoType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,9},[0-9]{0,8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PotenzaType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,6},[0-9]{0,3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipologiaContrattualeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Lettera a)"/>
+			<xs:enumeration value="Lettera b)"/>
+			<xs:enumeration value="Lettera c)"/>
+			<xs:enumeration value="Lettera d)"/>
+			<xs:enumeration value="Lettera e)"/>
+			<xs:enumeration value="Lettera f)"/>
+			<xs:enumeration value="Lettera g)"/>
+			<xs:enumeration value="Lettera h)"/>
+			<xs:enumeration value="Lettera i)"/>
+			<xs:enumeration value="Lettera j)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceMotivazioneType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="a"/>
+			<xs:enumeration value="b"/>
+			<xs:enumeration value="c"/>
+			<xs:enumeration value="d"/>
+			<xs:enumeration value="e"/>
+			<xs:enumeration value="f"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoAddAccType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="I"/>
+			<xs:enumeration value="C"/>
+			<xs:enumeration value="P"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AliquotaIVA">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,2}[%]?"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NoteFatturaType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="200"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TariffaType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AAT1"/>
+			<xs:enumeration value="AAT2"/>
+			<xs:enumeration value="ALTA"/>
+			<xs:enumeration value="BTA1"/>
+			<xs:enumeration value="BTA2"/>
+			<xs:enumeration value="BTA3"/>
+			<xs:enumeration value="BTA4"/>
+			<xs:enumeration value="BTA5"/>
+			<xs:enumeration value="BTA6"/>
+			<xs:enumeration value="BTIP"/>
+			<xs:enumeration value="BTVE"/>
+			<xs:enumeration value="D1"/>
+			<xs:enumeration value="D2"/>
+			<xs:enumeration value="D3"/>
+			<xs:enumeration value="MTA1"/>
+			<xs:enumeration value="MTA2"/>
+			<xs:enumeration value="MTA3"/>
+			<xs:enumeration value="MTIP"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SI-NOType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SI"/>
+			<xs:enumeration value="NO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SistemiEfficientiType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SEU"/>
+			<xs:enumeration value="SEESEU-A"/>
+			<xs:enumeration value="SEESEU-B"/>
+			<xs:enumeration value="SEESEU-C"/>
+			<xs:enumeration value="SSP-B"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AgevolCalNatType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodCorrisType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ClienteType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="10"/>
+			<xs:maxLength value="16"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumCorrisType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="20"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodComponenteType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="€/POD"/>
+			<xs:enumeration value="€/kW"/>
+			<xs:enumeration value="€/kWh"/>
+			<xs:enumeration value="€/kvarh"/>
+			<xs:enumeration value="€"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ScaglioneType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="33%-75%"/>
+			<xs:enumeration value="50%-75%"/>
+			<xs:enumeration value="75%-100%"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="CodiceIVAType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ORD"/>
+			<xs:enumeration value="AGE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DCodicePODType">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="9"/>
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TensioneType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BT"/>
+			<xs:enumeration value="MT"/>
+			<xs:enumeration value="AT"/>
+			<xs:enumeration value="AAT"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- FINE TIPI SEMPLICI -->
+	<!-- INIZIO TIPI COMPLESSI -->
+	<xs:complexType name="CorrispettiviType">
+		<xs:sequence>
+			<xs:element name="DCorrIndennPres" type="TipoAddAccType" minOccurs="0"/>
+			<xs:element name="DCodCorris" type="CodCorrisType" minOccurs="0"/>
+			<xs:element name="DDatiCliente" type="ClienteType" minOccurs="0"/>
+			<xs:element name="DNumIdentCorr" type="NumCorrisType" minOccurs="0"/>
+			<xs:element name="DCodiceMotivazione" type="CodiceMotivazioneType" minOccurs="0"/>
+			<xs:element name="DIDCalcolo" type="NumeroFatturaType" minOccurs="0"/>
+			<xs:element name="DComponente" type="CodComponenteType"/>
+			<xs:element name="DPeriodoCompetenzaDa" type="DataType"/>
+			<xs:element name="DPeriodoCompetenzaA" type="DataType"/>
+			<xs:element name="DInfoAddebito" type="NoteFatturaType" minOccurs="0"/>
+			<xs:element name="DCodPratica" type="NumCorrisType" minOccurs="0"/>
+			<xs:element name="DCTSAnno" type="ValutaType" minOccurs="0"/>
+			<xs:element name="DCTSProgressivo" type="ValutaType" minOccurs="0"/>
+			<xs:element name="DScaglione" type="ScaglioneType" minOccurs="0"/>
+			<xs:element name="DQuantità" type="ValutaType" minOccurs="0"/>
+			<xs:element name="DCorrispettivoUnitario" type="CorrispettivoType" minOccurs="0"/>
+			<xs:element name="DCodiceIVA" type="CodiceIVAType"/>
+			<xs:element name="DImporto" type="ValutaType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DatiTecniciCommercialiType">
+		<xs:sequence>
+			<xs:element name="DDTTensione" type="TensioneType"/>
+			<xs:element name="DDTPotenzaImpegnata" type="PotenzaType"/>
+			<xs:element name="DDTPotenzaDisponibile" type="PotenzaType"/>
+			<xs:element name="DDCTipologiaContrattuale" type="TipologiaContrattualeType" minOccurs="0"/>
+			<xs:element name="DDCTariffaDistribuzione" type="TariffaType" minOccurs="0"/>
+			<xs:element name="DDCProduttoriPuriPerizia" type="SI-NOType" minOccurs="0"/>
+			<xs:element name="DDCFornituraEnergivora" type="SI-NOType" minOccurs="0"/>
+			<xs:element name="DDCSistEfficEquivalenti" type="SistemiEfficientiType" minOccurs="0"/>
+			<xs:element name="DDCAgevolCalamitaNaturale" type="AgevolCalNatType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RiepilogoIVAType">
+		<xs:sequence>
+			<xs:element name="RAliquotaIVA" type="AliquotaIVA"/>
+			<xs:element name="RImponibileIVA" type="ValutaType"/>
+			<xs:element name="RImportoIVA" type="ValutaType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RiepilogoTipologiaContrattualeType">
+		<xs:sequence>
+			<xs:element name="RTipologiaContrattuale" type="TipologiaContrattualeType" minOccurs="0"/>
+			<xs:element name="RCodiceMotivazione" type="CodiceMotivazioneType" minOccurs="0"/>
+			<xs:element name="RCorrIndePrest" type="TipoAddAccType" minOccurs="0"/>
+			<xs:element name="RNumeroPod" type="xs:integer"/>
+			<xs:element name="RTotTarDistQtFissa" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotTarDistQtPotenza" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotTarDistEnAttiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotTarDistEnReattiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotOnGenUltComQtFissa" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotOnGenUltComQtPotenza" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotOnGenUltComEnAttiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleQuotaFissa" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleQuotaPotenza" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleEnergiaAttiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleEnergiaReattiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleGenerale" type="ValutaType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="DettaglioPODType">
+		<xs:sequence>
+			<xs:element name="DCodicePod" type="DCodicePODType"/>
+			<xs:element name="DatiTecniciCommerciali" type="DatiTecniciCommercialiType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Corrispettivi" type="CorrispettiviType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="RiepilogoFatturaType">
+		<xs:sequence>
+			<xs:element name="RiepilogoValori" type="RiepilogoTipologiaContrattualeType" maxOccurs="unbounded"/>
+			<xs:element name="RiepilogoIVA" type="RiepilogoIVAType" maxOccurs="unbounded"/>
+			<xs:element name="NoteFattura" type="NoteFatturaType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TestataFatturaType">
+		<xs:sequence>
+			<xs:element name="FPeriodoCompetenzaDa" type="PeriodoCompetenzaType"/>
+			<xs:element name="FPeriodoCompetenzaA" type="PeriodoCompetenzaType"/>
+			<xs:element name="FCodiceVoceFatturata" type="CodiceVoceFatturataType" minOccurs="0"/>
+			<xs:element name="FTotaleImponibileFattura" type="ValutaType"/>
+			<xs:element name="FTotaleIVAFattura" type="ValutaType"/>
+			<xs:element name="FTotaleFattura" type="ValutaType"/>
+			<xs:element name="FImportoBollo" type="ValutaType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FattureType">
+		<xs:sequence>
+			<xs:element name="FNumeroFattura" type="NumeroFatturaType"/>
+			<xs:element name="TestataFattura" type="TestataFatturaType"/>
+			<xs:element name="RiepilogoFattura" type="RiepilogoFatturaType"/>
+			<xs:element name="DettaglioPOD" type="DettaglioPODType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CorrispettiviNoPOD" type="CorrispettiviType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="TestataFlussoType">
+		<xs:sequence>
+			<xs:element name="TCodiceFlusso" type="CodiceFlussoType"/>
+			<xs:element name="TCodiceTipoFattura" type="CodiceTipoFatturaType"/>
+			<xs:element name="TNumeroSequenza" type="NumeroSequenzaType"/>
+			<xs:element name="TDataEmissioneFattura" type="DataType"/>
+			<xs:element name="TDataScadenzaFattura" type="DataType"/>
+			<xs:element name="TRagioneSocialeMittente" type="RagioneSocialeType"/>
+			<xs:element name="TPartitaIVAMittente" type="PIVAType"/>
+			<xs:element name="TIndirizzoMittente" type="IndirizzoType"/>
+			<xs:element name="TCAPMittente" type="CAPType"/>
+			<xs:element name="TLocalitaMittente" type="LocalitaType"/>
+			<xs:element name="TProvinciaMittente" type="ProvinciaType"/>
+			<xs:element name="TNazioneMittente" type="NazioneType"/>
+			<xs:element name="TIBANMittente" type="IBANType"/>
+			<xs:element name="TRagioneSocialeDestinatario" type="RagioneSocialeType"/>
+			<xs:element name="TPartitaIVADestinatario" type="PIVAType"/>
+			<xs:element name="TIndirizzoDestinatario" type="IndirizzoType"/>
+			<xs:element name="TCAPDestinatario" type="CAPType"/>
+			<xs:element name="TLocalitaDestinatario" type="LocalitaType"/>
+			<xs:element name="TProvinciaDestinatario" type="ProvinciaType"/>
+			<xs:element name="TNazioneDestinatario" type="NazioneType"/>
+			<xs:element name="TContrattoDispacciamento" type="ContrattoDispacciamentoType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- FINE TIPI COMPLESSI -->
+	<!-- INIZIO ELEMENTO PRINCIPALE -->
+	<xs:element name="FlussoFattureTrasporto">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="TestataFlusso" type="TestataFlussoType"/>
+				<xs:element name="Fatture" type="FattureType" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- FINE ELEMENTO PRINCIPALE -->
+</xs:schema>
