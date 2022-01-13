@@ -225,6 +225,12 @@
 			<xs:enumeration value="€"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="DirezioneReattivaType">
+	  <xs:restriction base="xs:string">
+			<xs:enumeration value="IM"/>
+			<xs:enumeration value="PR"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ScaglioneType">
 		<xs:restriction base="xs:string">
 			<xs:enumeration value="1"/>
@@ -269,6 +275,7 @@
 			<xs:element name="DCodiceMotivazione" type="CodiceMotivazioneType" minOccurs="0"/>
 			<xs:element name="DIDCalcolo" type="NumeroFatturaType" minOccurs="0"/>
 			<xs:element name="DComponente" type="CodComponenteType"/>
+			<xs:element name="DDirezioneReattiva" type="DirezioneReattivaType" minOccurs="0"/>
 			<xs:element name="DPeriodoCompetenzaDa" type="DataType"/>
 			<xs:element name="DPeriodoCompetenzaA" type="DataType"/>
 			<xs:element name="DInfoAddebito" type="NoteFatturaType" minOccurs="0"/>
@@ -312,6 +319,7 @@
 			<xs:element name="RTotTarDistQtPotenza" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotTarDistEnAttiva" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotTarDistEnReattiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotTarDistEnReattivaImmessa" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotOnGenUltComQtFissa" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotOnGenUltComQtPotenza" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotOnGenUltComEnAttiva" type="ValutaType" minOccurs="0"/>
@@ -319,6 +327,7 @@
 			<xs:element name="RTotaleQuotaPotenza" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotaleEnergiaAttiva" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotaleEnergiaReattiva" type="ValutaType" minOccurs="0"/>
+			<xs:element name="RTotaleEnergiaReattivaImmessa" type="ValutaType" minOccurs="0"/>
 			<xs:element name="RTotaleGenerale" type="ValutaType"/>
 		</xs:sequence>
 	</xs:complexType>
